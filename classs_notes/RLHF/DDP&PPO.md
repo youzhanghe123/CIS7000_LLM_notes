@@ -1,4 +1,5 @@
 1. DPO与PPO的核心区别
+   
 DPO (Direct Preference Optimization)
 
 目标：基于人类偏好数据，直接优化模型的行为，使其更符合偏好。
@@ -12,6 +13,7 @@ PPO (Proximal Policy Optimization)
 特点：PPO 引入了「裁剪」机制，限制每次策略更新的步长，防止策略变化太大而导致性能下降。
 
 2. 优化方式
+   
 DPO
 
 假设有一组模型输出：一个被偏好（例如：人类标注为「更好」），另一个不被偏好，
@@ -19,5 +21,6 @@ DPO
 使用的损失函数类似于对比学习 （参见loss_function_pair_wise.png).
 
 PPO
+
 直接更新策略，目标是最大化策略与旧策略相比的收益，同时不让新策略过多背离就策略，损失函数参见（RLHF_common_objective.png).
 加入裁剪机制，确保新策略与旧策略的偏离度在一定范围内。
