@@ -16,7 +16,8 @@
 
 ## **3. 二者结合的具体过程**  
 1. **输入数据通过路由分配：**  
-   - Router 根据 token 特征动态分配其到某个专家或 Top-k 个专家，并计算分配权重。  
+   - Router 根据 token 特征动态分配其到某个专家或 Top-k 个专家，并计算分配权重。
+   - Router score的计算方法是token representation和router wieghts矩阵进行dot prodduct,然后normalize(softmax)。详见router_score.png.  
 2. **稀疏激活：**  
    - 仅激活分配到的少量专家，未被激活的专家保持空闲，从而减少计算需求。  
 3. **专家并行计算：**  
