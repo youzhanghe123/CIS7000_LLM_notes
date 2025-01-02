@@ -23,6 +23,7 @@
 ### **Step 1: 初始化权重和Scaling Factor**
 
 假设我们有以下权重矩阵 (32-bit float)：  
+
 \[
 W = \begin{bmatrix} 0.12 & 0.55 \\ 0.98 & 0.50 \end{bmatrix}
 \]
